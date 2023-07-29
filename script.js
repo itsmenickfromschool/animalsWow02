@@ -32,11 +32,29 @@ fetch (animalURL, {
     animalFactBox.innerHTML = contentHtml
     })
 }
+function getGiphy() {
+  var searchValue = initialUserInput.value;
+    var giphyURL = ` https://api.giphy.com/v1/gifs/search?api_key=iNJblv33ezpXseWc2SeIxWyVYNY9QCc5&q=${searchValue}&limit=5&offset=0&rating=g&lang=en&bundle=messaging_non_clips`
+  
+// var name = document.getElementById('initialSearch')
+fetch (giphyURL, {
+   
+  })
+    .then(function (response){
+        return response.json();
+})
 
+    .then(function (data){
+     
+      console.log(data)
+
+    })
+}
 
 
 animalSearch.addEventListener("click", function() {
   getApi();
+  getGiphy();
 })
 
 /* fetch(giphyURL)
