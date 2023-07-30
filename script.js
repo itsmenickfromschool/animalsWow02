@@ -5,6 +5,7 @@ var animalSearch = document.querySelector("#startbtn");
 var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
 var animalFactBox =  document.getElementById("animalFacts")
+var contentHtml = ''
 
 function getApi() {
   var searchValue = initialUserInput.value;
@@ -23,14 +24,20 @@ fetch (animalURL, {
     .then(function (data){
 
       console.log(data)
-      var contentHtml = `
-      <li>Habitat: ${data[0].characteristics.habitat} </li>
-      <li>Diet: ${data[0].characteristics.diet}</li>
-      <li>Locations: ${data[0].locations[0]} </li>
-      <li>Predators: ${data[0].characteristics.predators} </li>
-      `
+      if (data.length === 0){
+        contentHtml = `<p>"Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!</p>`
+      } else {
+
+        contentHtml = `
+        <li>Habitat: ${data[0].characteristics.habitat} </li>
+        <li>Diet: ${data[0].characteristics.diet}</li>
+        <li>Locations: ${data[0].locations[0]} </li>
+        <li>Predators: ${data[0].characteristics.predators} </li>
+        `
+      }
     animalFactBox.innerHTML = contentHtml
     })
+    
 }
 function getGiphy() {
   var searchValue = initialUserInput.value;
