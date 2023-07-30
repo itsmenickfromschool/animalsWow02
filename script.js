@@ -47,6 +47,14 @@ fetch (giphyURL, {
     .then(function (data){
      
       console.log(data)
+      var displayGIF =  document.getElementById("gifBox");
+      displayGIF.innerHTML = "";
+      data.data.forEach((data) => {
+       var img =document.createElement("img");
+       img.src =data.images.original.url;
+       displayGIF.appendChild(img);
+      })
+
 
     })
 }
