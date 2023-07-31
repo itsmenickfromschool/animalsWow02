@@ -8,49 +8,76 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- <div class="tile is-ancestor is-widescreen">
+    <!-- <div class="container">
+    <div class="tile is-ancestor is-widescreen">
       <div class="tile is-parent is-4 is-vertical has-background-primary-light">
-        <div class="tile is-child is-4"> going to add id here to piggyback off the forEach giphy function </div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/uSYQsJQWEv6O4" frameBorder="0" width="480" height="480" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/panda-uSYQsJQWEv6O4"></a></p>
+        </div>
         </div>
       <div class="tile is-parent is-4 is-vertical has-background-primary">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/UR4zxVDibWUhy" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/UR4zxVDibWUhy"></a></p>
+        </div>
         </div>
       <div class="tile is-parent is-4 is-vertical has-background-primary-dark">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/1VKi2xud4qsrS" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happens-boop-bunnies-1VKi2xud4qsrS"></a></p>
+        </div>
       </div>
     </div>
     <div class="tile is-ancestor is-widescreen">
       <div class="tile is-parent is-vertical is-4 has-background-info-light">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/z0ioCfDnxx3TW" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/racoon-rolling-cute-z0ioCfDnxx3TW"></a></p>
+        </div>
       </div>
       <div class="tile is-parent is-vertical is-4 has-background-info">
-        <div class="tile is-child is-4">
-            <button class="button is-info is-focused is-large is-full-width" id="search-prompt"> CLICK ME </button>
+        <div class="tile is-child is-4 is-justify-content-space-between">
+            <button class="button is-info is-focused is-large" id="search-prompt"> CLICK ME </button>
         </div>
       </div>
       <div class="tile is-parent is-vertical is-4 has-background-info-dark">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/1qB3EwE3c54A" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-1qB3EwE3c54A"></a></p>
+        </div>
       </div>
     </div>
     <div class="tile is-ancestor is-widescreen">
       <div class="tile is-parent is-vertical is-4 has-background-warning-light">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/vYtDDrgTXyrm0" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bear-hi-vYtDDrgTXyrm0"></a></p>
+        </div>
       </div>
       <div class="tile is-parent is-vertical is-4 has-background-warning">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <iframe src="https://giphy.com/embed/xpNqS4fGFjkGc" width="480" height="480" frameBorder="0" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/squid-xpNqS4fGFjkGc"></a></p>
+        </div>
       </div>
       <div class="tile is-parent is-vertical is-4 has-background-warning-dark">
-        <div class="tile is-child is-4">going to add id here to piggyback off the forEach giphy function</div>
+        <div class="tile is-child is-4">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWFoMm04M2VuMW5zMW9iemY0MjUzZm9pcWtxNDFqZHc5Mml4bnB2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2b6aZLlnWZpJFxe0cD/giphy.gif" style="width:100%;height:100%;">
+        </div>
       </div>
     </div>
-  <div class="modal">
+  </div>
+  <div class="modal" id="modal-one">
     <div class="modal-background"></div>
       <div class="modal-content has-background-white py-5 px-5">
         <div class="title mb-6"> Type an animal name to receive a fact about that animal and a silly little gif to go with it! </div>
-          <input type="text" id="initialUserInput" class="input is-meduim is-hovered" placeholder="Ex: Turtle, Panda, Raccoon">
+          <input type="text" id="initialUserInput" class="input is-medium is-hovered" placeholder="Ex: Turtle, Panda, Raccoon">
           <button class="button is-info is-focused is-large is-full-width" id="startbtn"> Search </button>
     </div>
-  </div> -->
+  </div>
+  <div class="modal" id="modal-two">
+    <div class="modal-background"></div>
+      <div class="modal-content has-background-white py-5 px-5">
+        <ul class="animalFacts"></ul>
+      <div class="tile is-parent is-vertical">
+        <div class="tile is-child">
+          <div class="image is-square" id="gifBox"></div>
+        </div>
+      </div> -->
   <section class="section">
     <div class="columns">
         <div class="column">
