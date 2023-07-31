@@ -10,6 +10,7 @@ var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
 var animalFactBox =  document.getElementById("animalFacts")
 var contentHtml = ''
+var animalDataFound = false; 
 
 function getApi() {
   var searchValue = initialUserInput.value;
@@ -56,8 +57,10 @@ fetch (animalURL, {
         <li>Locations: ${data[0].locations[0]} </li>
         <li>Predators: ${data[0].characteristics.predators} </li>
         `
+        animalDataFound = true;
       }
     animalFactBox.innerHTML = contentHtml
+    getGiphy();
     })
     
 }
@@ -74,7 +77,9 @@ fetch (giphyURL, {
 })
 
     .then(function (data){
-     
+      if (!animalDataFound){
+        return;
+      } else {     
       console.log(data)
       var displayGIF =  document.getElementById("gifBox");
       displayGIF.innerHTML = "";
@@ -83,7 +88,7 @@ fetch (giphyURL, {
        img.src =data.images.original.url;
        displayGIF.appendChild(img);
       })
-
+    }
 
     })
 }
@@ -96,7 +101,9 @@ animalSearch.addEventListener("click", function() {
 // modalOneActivate.classList.remove("is-active");
 // modalTwoActivate.classList.add("is-active");
   getApi();
-  getGiphy();
+  // getGiphy();  //removed getgiphy since it needed to be called under the animal api to remove the
+  // gif from showing up when a search came back undefined
+  // may need to build in refresh on search since the search will take properties from the previous search and either display or not display a gif
 })
 
 /* fetch(giphyURL)
