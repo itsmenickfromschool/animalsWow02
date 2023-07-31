@@ -1,6 +1,9 @@
 var animalAPI = "FsdXAP6AmCh3sGYdfhvA6Q==WYbgbcTXlNXxZkxm";
 var tenorAPI = "AIzaSyDEa3l0bqCEAeClPPwFIpniGKyPjJg2VRw";
 var giphyAPI = `iNJblv33ezpXseWc2SeIxWyVYNY9QCc5`
+//added modalPrompt and modalActivation for eventlistener
+var modalPrompt = document.querySelector("#search-prompt");
+var modalActivation = document.querySelector(".modal");
 var animalSearch = document.querySelector("#startbtn");
 var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
@@ -66,8 +69,20 @@ fetch (giphyURL, {
     })
 }
 
+/* this will activate the modal pop-up, I took the startBtn attached to the animalSearch and connected it to the Search
+button inside of this modal, we can put something inside the event listener for animalSearch that will remove the (is-active)
+class (to hide the modal, and we can remove all the html somehow and append the data to the page), OR we can have the removal
+of (is-active) and have the animalSearch() data display in it's own modal */
+//todo uncomment the event listener below and the html to see it in action and lmk what you think?
+// modalPrompt.addEventListener("click", function() {
+// modalActivation.classList.add("is-active");
+// });
 
 animalSearch.addEventListener("click", function() {
+/* this is removing the modal on the search click, here we could do a modalTwo.classList.add("is-active") and create elements
+and add classes for styling to display the search data with another modal */
+//todo uncomment this as well!
+//modalActivation.classList.remove("is-active");
   getApi();
   getGiphy();
 })
