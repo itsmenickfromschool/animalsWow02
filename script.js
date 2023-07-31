@@ -1,9 +1,10 @@
 var animalAPI = "FsdXAP6AmCh3sGYdfhvA6Q==WYbgbcTXlNXxZkxm";
 var tenorAPI = "AIzaSyDEa3l0bqCEAeClPPwFIpniGKyPjJg2VRw";
 var giphyAPI = `iNJblv33ezpXseWc2SeIxWyVYNY9QCc5`
-//added modalPrompt and modalActivation for eventlistener
+//added modalPrompt and modalActivation for eventlisteners
 var modalPrompt = document.querySelector("#search-prompt");
-var modalActivation = document.querySelector(".modal");
+var modalOneActivate = document.querySelector("#modal-one");
+var modalTwoActivate = document.querySelector("#modal-two");
 var animalSearch = document.querySelector("#startbtn");
 var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
@@ -28,9 +29,27 @@ fetch (animalURL, {
 
       console.log(data)
       if (data.length === 0){
+        // var errorMsg = document.createElement("p");
+        // errorMsg.textContent = "Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!";
+        // animalFactBox.append(errorMsg);
         contentHtml = `<p>"Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!</p>`
       } else {
-
+        // var habitat = document.createElement("li");
+        // var diet = document.createElement("li");
+        // var locations = document.createElement("li");
+        // var predators = document.createElement("li");
+        // habitat.setAttribute("class", "subtitle is-dark");
+        // diet.setAttribute("class", "subtitle is-dark");
+        // locations.setAttribute("class", "subtitle is-dark");
+        // predators.setAttribute("class", "subtitle is-dark");
+        // habitat.textContent = "Habitat: " + data[0].characteristics.habitat;
+        // diet.textContent = "Diet: " + data[0].characteristics.diet;
+        // locations.textContent = "Locations: " + data[0].locations[0];
+        // predators.textContent = "Predators: " + data[0].characteristics.predators;
+        // animalFactBox.append(habitat);
+        // animalFactBox.append(diet);
+        // animalFactBox.append(locations);
+        // animalFactBox.append(predators);
         contentHtml = `
         <li>Habitat: ${data[0].characteristics.habitat} </li>
         <li>Diet: ${data[0].characteristics.diet}</li>
@@ -69,20 +88,13 @@ fetch (giphyURL, {
     })
 }
 
-/* this will activate the modal pop-up, I took the startBtn attached to the animalSearch and connected it to the Search
-button inside of this modal, we can put something inside the event listener for animalSearch that will remove the (is-active)
-class (to hide the modal, and we can remove all the html somehow and append the data to the page), OR we can have the removal
-of (is-active) and have the animalSearch() data display in it's own modal */
-//todo uncomment the event listener below and the html to see it in action and lmk what you think?
 // modalPrompt.addEventListener("click", function() {
-// modalActivation.classList.add("is-active");
+// modalOneActivate.classList.add("is-active");
 // });
 
 animalSearch.addEventListener("click", function() {
-/* this is removing the modal on the search click, here we could do a modalTwo.classList.add("is-active") and create elements
-and add classes for styling to display the search data with another modal */
-//todo uncomment this as well!
-//modalActivation.classList.remove("is-active");
+// modalOneActivate.classList.remove("is-active");
+// modalTwoActivate.classList.add("is-active");
   getApi();
   getGiphy();
 })
