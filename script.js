@@ -11,8 +11,9 @@ var name = " ";
 var animalFactBox =  document.getElementById("animalFacts")
 var contentHtml = ''
 var animalDataFound = false; 
-var displayGIF =  document.querySelectorAll(".is-child");
-console.log(displayGIF)
+
+var gifGrid =  document.querySelectorAll(".gifGrid");
+console.log(gifGrid)
 
 function getApi() {
   var searchValue = initialUserInput.value;
@@ -34,6 +35,7 @@ fetch (animalURL, {
       if (data.length === 0){
  
         contentHtml = `<p>"Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!</p>`
+        
       } else {
         
         contentHtml = `
@@ -62,19 +64,29 @@ fetch (giphyURL, {
         return response.json();
 })
 
-    .then(function (data){
+    .then(function (gifs){
       if (!animalDataFound){
         return;
       } else {     
-      console.log(data)
-      // var displayGIF =  document.querySelectorAll(".is-child");
-      displayGIF.innerHTML = "";
-      data.data.forEach((data) => {
-       var img =document.createElement("img");
-       img.src =data.images.original.url;
-       displayGIF.appendChild(img);
-       console.log(displayGIF)
-      })
+        var index = 0
+      gifGrid.forEach(function(div){
+        console.log(gifs.data[index].images.original.url)
+        var img = document.createElement("img");
+        img.src = gifs.data[index].images.original.url;
+        div.append(img);
+        index += 1
+        // console.log(displayGIF)
+
+      });
+        
+      //   )
+      //   displayGIF.innerHTML = "";
+      //   data.data.forEach((data) => {
+      //   var img =document.createElement("img");
+      //   img.src =data.images.original.url;
+      //   displayGIF.appendChild(img);
+      //   console.log(displayGIF)
+      // })
     }
 
     })
