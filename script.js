@@ -4,7 +4,6 @@ var giphyAPI = `iNJblv33ezpXseWc2SeIxWyVYNY9QCc5`
 //added modalPrompt and modalActivation for eventlisteners
 var modalPrompt = document.querySelector("#search-prompt");
 var modalOneActivate = document.querySelector("#modal-one");
-var modalTwoActivate = document.querySelector("#modal-two");
 var animalSearch = document.querySelector("#startbtn");
 var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
@@ -107,7 +106,6 @@ modalPrompt.addEventListener("click", function() {
 animalSearch.addEventListener("click", function() {
 
 modalOneActivate.classList.remove("is-active");
-// modalTwoActivate.classList.add("is-active");
 getApi();
 
 
@@ -132,21 +130,45 @@ fetch (animalURL, {
 
       console.log(data)
       if (data.length === 0){
- 
-        contentHtml = `<p>"Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!</p>`
+        var errorMsg = document.createElement("div");
+        errorMsg.setAttribute("class", "title");
+        animalFactBox.append(errorMsg);
+        // contentHtml = `<p>"Please be more specific with your animal name, Maybe try it's common name. If all else fails try another Animal! Sorry!!</p>`
         
       } else {
         
-        contentHtml = `
-        <li>Habitat: ${data[0].characteristics.habitat} </li>
-        <li>Diet: ${data[0].characteristics.diet}</li>
-        <li>Locations: ${data[0].locations[0]} </li>
-        <li>Lifespan: ${data[0].characteristics.lifespan} </li>
-       
-        `
         animalDataFound = true;
+        document.querySelector(".button").textContent = "CLICK HERE TO SEARCH AGAIN"
+        var animalName = document.createElement("div");
+        var habitat = document.createElement("li");
+        var diet = document.createElement("li");
+        var locations = document.createElement("li");
+        var predators = document.createElement("li");
+        animalName.setAttribute("class", "title is-dark is-centered");
+        habitat.setAttribute("class", "subtitle is-dark");
+        diet.setAttribute("class", "subtitle is-dark");
+        locations.setAttribute("class", "subtitle is-dark");
+        predators.setAttribute("class", "subtitle is-dark");
+        animalName.textContent = initialUserInput.value;
+        habitat.textContent = "Habitat: " + data[0].characteristics.habitat;
+        diet.textContent = "Diet: " + data[0].characteristics.diet;
+        locations.textContent = "Locations: " + data[0].locations[0];
+        predators.textContent = "Predators: " + data[0].characteristics.predators;
+        animalFactBox.append(animalName);
+        animalFactBox.append(habitat);
+        animalFactBox.append(diet);
+        animalFactBox.append(locations);
+        animalFactBox.append(predators);
+        // contentHtml = `
+        // <li>Habitat: ${data[0].characteristics.habitat} </li>
+        // <li>Diet: ${data[0].characteristics.diet}</li>
+        // <li>Locations: ${data[0].locations[0]} </li>
+        // <li>Lifespan: ${data[0].characteristics.lifespan} </li>
+       
+        // `
+
       }
-    animalFactBox.innerHTML = contentHtml
+    // animalFactBox.innerHTML = contentHtml
     getGiphy();
     })
     
