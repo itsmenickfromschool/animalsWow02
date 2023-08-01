@@ -64,20 +64,28 @@ fetch (giphyURL, {
         return response.json();
 })
 
-    .then(function (gifs){
-      if (!animalDataFound){
-        return;
-      } else {     
-        var index = 0
-      gifGrid.forEach(function(div){
-        console.log(gifs.data[index].images.original.url)
-        var img = document.createElement("img");
-        img.src = gifs.data[index].images.original.url;
-        div.append(img);
-        index += 1
-        // console.log(displayGIF)
+.then(function (gifs){
+  if (!animalDataFound){
+    return;
+  } else {     
+    var index = 0
+    gifGrid.forEach(function(div){
+      console.log(gifs.data[index].images.original.url)
+      div.innerHTML = ''
+      index += 1
+    })
+    index = 0
+  gifGrid.forEach(function(div){
+    console.log(gifs.data[index].images.original.url)
+    var img = document.createElement("img");
+    img.src = gifs.data[index].images.original.url;
+    div.append(img);
+    index += 1;
+    // console.log(displayGIF)
 
-      });
+  });
+
+      
         
       //   )
       //   displayGIF.innerHTML = "";
