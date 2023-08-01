@@ -198,6 +198,7 @@ Nick's area below -- proceed w/ caution!
 
 function onLoad(url){
   gifGrid.forEach(function(div){
+    console.log(placeHolderRandom())
     console.log('sadfasdf')
     console.log(url);
     var img = document.createElement('img');
@@ -230,7 +231,7 @@ async function placeHolderRandom() {
   const randomAnimalGif = await getLoaded();
   console.log(randomAnimalGif);
   console.log(typeof randomAnimalGif);
-  onLoad(randomAnimalGif);
+  // onLoad(randomAnimalGif);
   return randomAnimalGif;
 }
 
