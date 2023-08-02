@@ -164,7 +164,7 @@ fetch (animalURL, {
 }
 function getGiphy() {
   var searchValue = initialUserInput.value;
-  var giphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI}&q=${searchValue}&limit=8&offset=0&rating=g&lang=en&bundle=messaging_non_clips`
+  var giphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI}&q=${searchValue}&limit=8&offset=0&rating=g&lang=en&bundle=messaging_non_clips&tag=animal`
   
 
 fetch (giphyURL, {
@@ -205,11 +205,10 @@ fetch (giphyURL, {
 Nick's area below -- proceed w/ caution! 
 */
 
-function onLoad(url){
-  gifGrid.forEach(function(div){
-    console.log(placeHolderRandom())
-    console.log('sadfasdf')
-    console.log(url);
+ function onLoad(){
+  gifGrid.forEach(async function(div){
+    var url = await placeHolderRandom()
+    console.log(url)
     var img = document.createElement('img');
     img.src = url
     div.append(img);
