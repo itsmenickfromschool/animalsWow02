@@ -96,6 +96,7 @@ const animals = [
 /* **********************************************************************************************************************************/
 window.addEventListener('load', function(event){
     onLoad();
+    // make butoon
 });
 
 modalPrompt.addEventListener("click", function() {
@@ -135,26 +136,35 @@ fetch (animalURL, {
         
         animalDataFound = true;
         document.querySelector(".button").textContent = "SEARCH AGAIN"
+        // var reset = document.querySelectorAll('.resetSearch');
+        // reset.setAttribute('style', 'display: none')
         var animalName = document.createElement("div");
         var habitat = document.createElement("li");
         var diet = document.createElement("li");
         var locations = document.createElement("li");
         var predators = document.createElement("li");
-        animalName.setAttribute("class", "title is-dark is-centered");
-        habitat.setAttribute("class", "subtitle is-dark");
-        diet.setAttribute("class", "subtitle is-dark");
-        locations.setAttribute("class", "subtitle is-dark");
-        predators.setAttribute("class", "subtitle is-dark");
+        animalName.setAttribute("class", "title is-dark is-centered resetSearch");
+        habitat.setAttribute("class", "subtitle is-dark resetSearch");
+        diet.setAttribute("class", "subtitle is-dark resetSearch");
+        locations.setAttribute("class", "subtitle is-dark resetSearch");
+        predators.setAttribute("class", "subtitle is-dark resetSearch");
         animalName.textContent = initialUserInput.value;
         habitat.textContent = "Habitat: " + data[0].characteristics.habitat;
         diet.textContent = "Diet: " + data[0].characteristics.diet;
         locations.textContent = "Locations: " + data[0].locations[0];
         predators.textContent = "Predators: " + data[0].characteristics.predators;
+        // reset.setAttribute('style', 'display: flex')
         animalFactBox.append(animalName);
         animalFactBox.append(habitat);
         animalFactBox.append(diet);
         animalFactBox.append(locations);
         animalFactBox.append(predators);
+        /*
+        we want to instead of append and remove all of these, add empty divs into the animalfacts div and target those. 
+
+
+        if this is difficult i could also add the button to the event listeners with a button creat funtion and innerhtml = '' at the beginning and then create the button.
+         */
       }
     getGiphy();
     })
@@ -178,13 +188,12 @@ fetch (giphyURL, {
   } else {     
     var index = 0
     gifGrid.forEach(function(div){
-      console.log(gifs.data[index].images.original.url)
+
       div.innerHTML = ''
       index += 1
     })
     index = 0
   gifGrid.forEach(function(div){
-    console.log(gifs.data[index].images.original.url)
     var img = document.createElement("img");
     img.src = gifs.data[index].images.original.url;
     div.append(img);
