@@ -1,4 +1,26 @@
-* {
-padding: 1px;
-}
+.gifGrid {
+    height:300px;
+    width:300px;
+    
+    }
+    
+.gifGrid img {
+        height:100%;
+        width:100%;
+        object-fit:cover !important;
+    }
+    
+@media screen and (max-width: 768px) {
+        img {
+            height:100%;
+            width:100%
+        }
+      }
+      
+@media screen and (max-width: 576px) {
+        img {
+            height:100%;
+            width:100%
+        }
+      }
 
