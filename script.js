@@ -136,7 +136,7 @@ fetch (animalURL, {
       } else {
         
         animalDataFound = true;
-        document.querySelector(".button").textContent = "CLICK HERE TO SEARCH AGAIN"
+        document.querySelector(".button").textContent = "SEARCH AGAIN"
         var animalName = document.createElement("div");
         var habitat = document.createElement("li");
         var diet = document.createElement("li");
