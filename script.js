@@ -95,8 +95,7 @@ const animals = [
 ];
 /* **********************************************************************************************************************************/
 window.addEventListener('load', function(event){
-  console.log('window wow')
-  onLoad();
+    onLoad();
 });
 
 modalPrompt.addEventListener("click", function() {
@@ -112,7 +111,6 @@ getApi();
 
 })
 var gifGrid =  document.querySelectorAll(".gifGrid");
-console.log(gifGrid)
 
 function getApi() {
   var searchValue = initialUserInput.value;
@@ -208,7 +206,6 @@ Nick's area below -- proceed w/ caution!
  function onLoad(){
   gifGrid.forEach(async function(div){
     var url = await placeHolderRandom()
-    console.log(url)
     var img = document.createElement('img');
     img.src = url
     div.append(img);
@@ -223,7 +220,6 @@ function findRandomAnimal() {
   return randomAnimal;
 }
 var randomAnimal = findRandomAnimal()
-console.log(randomAnimal)
 
 async function getLoaded() {
   var searchValue = findRandomAnimal();
@@ -232,13 +228,10 @@ async function getLoaded() {
   const response = await fetch(giphyURL);
   const gifs = await response.json();
   var random = gifs.data[0].images.original.url;
-  console.log(random)
   return random;
 }
 async function placeHolderRandom() {
   const randomAnimalGif = await getLoaded();
-  console.log(randomAnimalGif);
-  console.log(typeof randomAnimalGif);
   // onLoad(randomAnimalGif);
   return randomAnimalGif;
 }
