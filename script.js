@@ -7,7 +7,7 @@ var modalOneActivate = document.querySelector("#modal-one");
 var animalSearch = document.querySelector("#startbtn");
 var initialUserInput = document.getElementById("initialUserInput")
 var name = " ";
-var animalFactBox = document.getElementById("animalFacts")
+var animalFactBox = document.querySelector(".animalFacts") //changed animal facts to a class to make styling easier
 var contentHtml = ''
 var animalDataFound = false;
 const animals = [
@@ -132,9 +132,11 @@ function getApi() {
         console.log("CHEETAHS STOLE MY LUNCH")
         animalFactBox.innerHTML = '<button class="button is-primary is-focused is-large is-responsive" id="search-prompt"> CLICK ME </button>'
 
+       
+
         animalDataFound = true;
 
-        document.querySelector(".button").textContent = "SEARCH AGAIN"
+        // document.querySelector(".button").textContent = "SEARCH AGAIN" 
 
         modalPrompt = document.querySelector("#search-prompt");
         modalPrompt.addEventListener("click", function () {
