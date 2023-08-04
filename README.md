@@ -5,7 +5,7 @@ We created this application as a "cure to boredom". With technology nowadays it 
 ## What this project has taught us
 Nick Burr: " This project taught me a lot about the value of collaboration in front-end development. Working with a team is a whole different game. It is easy to work solo and implement your own ideas. When it comes to communicating thoughts with others, a lot of nuance comes into play. Our group definitely overcame scheduling issues and learned the value of having a good team that checked in with one-another frequently. In addition to teamwork, building our own application taught me a lot about API's and how to interact with them. My Javascript and HTML skills developed a bit more just by the fact that I was using them creatively. Additionally working with others made me see new ways to accomplish things that in ways I had not thought of before.
 
-Sam Evans: " "
+Sam Evans: "The one thing that sticks out the most is finding the similarities in other people's ideas, and working to implement them in a way that benefits the end goal. Ultimately, what we want is a functional base that's also aesthetically pleasing, and I feel we accomplished that. I've been working at home for over three years now, which has little interaction, so having small meet-ups during the week outside of class was fun, and also challenging as we all have fairly different schedules."
 
 Diego Yavara: " "
 
