@@ -1,26 +1,84 @@
-.gifGrid {
+* {
+    background-color: transparent;
+    border-color: transparent;
+     
+       
+}
+
+
+body {
+    background-image:
+    linear-gradient(to top, rgba(255, 220, 155, 0.685), rgba(180, 119, 62, 0.623)),
+    url('images/background.png');  
+    background-repeat: repeat;
+   
+}
+
+/* .gifGrid {
     height:300px;
     width:300px;
     
-    }
+    } */
     
-.gifGrid img {
-        height:100%;
+    .gifGrid img {
+        height: 375px;
         width:100%;
-        object-fit:cover !important;
+        border-radius: 9px;
+        flex-direction: row;
+       
+    }
+
+    .column {
+        padding: 0.75rem;
+        display : flex;
+        
+    }
+
+    .animalFacts {
+        height: 375px;
+        width:100%;
+        border-color: transparent;
+        background-color: rgba(245, 214, 164, 0.726);
+        justify-content: center;
+        text-align: center;
+        list-style: none;
+        flex-wrap: wrap;
+        padding-top : 1rem;
+        border-radius: 9px;
+        flex:2;
+      
+
+           
+        
+    }
+
+    .button  {
+        padding-top: 10px;
+        border-radius: 20px;
+        background-color: rgba(145, 102, 37, 0.486);
+        border: 0cap;
+        
+    }
+    #search-prompt {
+        padding-top: 10px;
+        border-radius: 20px;
+        background-color: rgba(145, 102, 37, 0.486);
+        
+
     }
     
 @media screen and (max-width: 768px) {
         img {
             height:100%;
-            width:100%
+            width:100%;
         }
       }
       
 @media screen and (max-width: 576px) {
-        img {
+     img {
+            
             height:100%;
-            width:100%
+            width:100%;
         }
       }
 
