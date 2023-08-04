@@ -3,7 +3,7 @@
 We created this application as a "cure to boredom". With technology nowadays it is becoming increasingly hard to grasp people's attention online. Our attention spans are getting shorter and shorter! We created this so users can search multiple animals multiple times and not only learn new things about those animals but see up to 8 silly little GIFs of them when they submit their search!
 
 ## What this project has taught us
-Nick Burr: " "
+Nick Burr: " This project taught me a lot about the value of collaboration in front-end development. Working with a team is a whole different game. It is easy to work solo and implement your own ideas. When it comes to communicating thoughts with others, a lotof nuance comes into play. Our group definitely overcame scheduling issues and learned the value of having a good team that checked in with one-another frequently. In addition to teamwork, building our own application taught me a lot about API's and how to interact with them. My Javascript and HTML skills developed a bit more just by the fact that I was using them creatively. Additionally working with others made me see new ways to accomplish things that in ways I had not thought of before.
 
 Sam Evans: " "
 
@@ -14,7 +14,7 @@ P.J. Rasmussen: "This project taught me how to read other people's code a bit be
 <details>
 <summary> Link to live site & screenshots </summary>
 
-LINK HERE
+[Animals, Wow!](https://itsmenickfromschool.github.io/animalsWow02/)
 
 ![Screenshot of website](assets/PutScreenshotsHere.png)
 
