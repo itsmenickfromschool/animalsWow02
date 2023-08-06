@@ -15,8 +15,15 @@ P.J. Rasmussen: "This project taught me how to read other people's code a bit be
 <summary> Link to live site & screenshots </summary>
 
 [Animals, Wow!](https://itsmenickfromschool.github.io/animalsWow02/)
+ 
+Main screen/Home page
+![Screenshot of homepage](images/Homepage.png)
 
-![Screenshot of website](assets/PutScreenshotsHere.png)
+After "click me" has been pressed
+![Screenshot of modal](images/Modal-Event.png)
+
+After typing in an animal- for this example I used "Tiger"
+![Screenshot of tiger search](images/After-Search.png)
 
 </details>
 
@@ -35,7 +42,7 @@ Spoke about how we would implement the acceptance criteria of the project into o
 
 Started creating github issues for bugs and a "to-do" list, closed issues as they were resolved
 
-
+Started adding our resources and process to the README and creating a google slides presentation doc
 
 </details>
 
@@ -47,6 +54,10 @@ These were the API's that we used to make this project:
 https://api-ninjas.com/api/animals
 
 https://developers.giphy.com/docs/api
+
+This is our google slides presentation document
+
+https://docs.google.com/presentation/d/1IdHWlbsvGyLhjaecZKJzwxCol2qpp4L0OH3IYWnQAjQ/edit?usp=sharing
 
 These are websites that helped each of us contribute to this repo:
 
@@ -64,8 +75,9 @@ https://bulma.io/documentation/
 
 https://youtu.be/IiPQYQT2-wg
 
-Trevor Oveson (TA) clarified a misunderstanding I had about asynchronous functions and the await method, and explained how they are used to our whole group. - 
+Trever Oveson (TA) clarified a misunderstanding I had about asynchronous functions and the await method, and explained how they are used to our whole group. - 
 
+Jacek Hacking, Trever Oveson & CJ Sanders (TAs) helped out with some styling issues we were having due to a misunderstanding P.J. had with how Bulma containers/tiles worked and resizing the GIFs.
 
 
 </details>
