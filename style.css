@@ -14,11 +14,9 @@ body {
    
 }
 
-/* .gifGrid {
-    height:300px;
-    width:300px;
-    
-    } */
+.navbar-item, .navbar-link {
+    background-color: #E8ded2;
+}
     
     .gifGrid img {
         height: 375px;
