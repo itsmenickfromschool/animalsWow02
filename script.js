@@ -2,6 +2,10 @@ var animalAPI = "FsdXAP6AmCh3sGYdfhvA6Q==WYbgbcTXlNXxZkxm";
 var tenorAPI = "AIzaSyDEa3l0bqCEAeClPPwFIpniGKyPjJg2VRw";
 var giphyAPI = `iNJblv33ezpXseWc2SeIxWyVYNY9QCc5`
 //added modalPrompt and modalActivation for eventlisteners
+
+//local storage 
+var storedUserInput = JSON.parse(localStorage.getItem("userinput")) || [];
+
 var modalPrompt = document.querySelector("#search-prompt");
 var modalOneActivate = document.querySelector("#modal-one");
 var animalSearch = document.querySelector("#startbtn");
@@ -252,7 +256,20 @@ async function placeHolderRandom() {
   return randomAnimalGif;
 }
 
-// }
+// localStorage.clear(localStorage);
+
+animalSearch.addEventListener("click", function() {
+  storedUserInput.push(initialUserInput.value);
+localStorage.setItem("userinput", JSON.stringify(storedUserInput));
+  for (let i = 0; i < storedUserInput.length; i++) {
+      var pTag = document.createElement("a")
+      pTag.setAttribute("class", "navbar-item");
+      pTag.textContent = storedUserInput[i];
+      document.querySelector(".navbar-dropdown").appendChild(pTag);
+      console.log(localStorage);
+      };
+});
+
 
 
 
